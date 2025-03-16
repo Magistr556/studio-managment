@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Studio(models.Model):
@@ -10,6 +11,7 @@ class Studio(models.Model):
 
 class Rent(models.Model):
     studio = models.ForeignKey(Studio, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     rent_date = models.DateTimeField()
     rent_hours = models.IntegerField()
     total_price = models.IntegerField()
@@ -19,5 +21,4 @@ class Rent(models.Model):
 
     def __str__(self):
         return (f"{self.studio.name} "
-                f"Арендовано на {self.rent_date}. Время записи: {self.rent_hours}"
-                f"Оплата {self.total_price}")
+                f"Арендовано на {self.rent_date}. Время записи: {self.rent_hours} Оплата {self.total_price}")

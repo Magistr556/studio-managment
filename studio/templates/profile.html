@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<h1>{{ user.username }}</h1>
+<p>Email: {{ user.email }}</p>
+
+<h2>Мои аренды</h2>
+<ul>
+    {% for rent in rents %}
+        <li>
+            {{ rent.studio.name }} - {{ rent.rent_date }} ({{ rent.rent_hours }} ч. - {{ rent.total_price }} rub)
+            <a href="{% url 'rent_studio' rent.studio.id %}" class="btn btn-primary">Изменить аренду</a>
+            <a href="{% url 'cancel_rent' rent.id %}" class="btn btn-danger">Отменить аренду</a>
+        </li>
+    {% empty %}
+        <li>У вас нет аренд.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'home' %}" class="btn btn-primary">На главную</a>
+<a href="{% url 'logout' %}" class="btn btn-danger">Выйти</a>
+{% endblock %}

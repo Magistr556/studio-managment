@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Studio, Rent
 
-# Register your models here.
+admin.site.register(Studio)
+admin.site.register(Rent)

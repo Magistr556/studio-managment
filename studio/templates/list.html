@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Список студий{% endblock %}
+
+{% block content %}
+<h1>Список студий</h1>
+<ul>
+    {% for studio in studios %}
+        <li>
+            {{ studio.name }} - {{ studio.location }} ({{ studio.price_per_hour }} руб/час)
+            <a href="{% url 'rent_studio' studio.id %}" class="btn btn-primary">Арендовать</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
