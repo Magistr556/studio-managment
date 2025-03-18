@@ -6,7 +6,7 @@ Studio Managment
 
 Скопируйте репозиторий:
 
-$ git clone https://github.com/notLinode/retardation.git
+$ git clone https://github.com/Magistr556/studio-managment
 
 Для запуска сайта введите в терминал:
 
