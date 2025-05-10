@@ -20,6 +20,11 @@
 ```bash
 git clone https://github.com/Magistr556/studio-managment
 ```
+
+Запуск:
+'''bash
+python manage.py runserver
+'''
 ---
 
 ## Бейджи
