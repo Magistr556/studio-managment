@@ -32,3 +32,12 @@ python manage.py runserver
 ![Build](https://github.com/Magistr556/studio-managment/actions/workflows/build.yml/badge.svg)
 ![Deploy](https://github.com/Magistr556/studio-managment/actions/workflows/deploy.yml/badge.svg)
 
+### Настроенные Workflow:
+
+| Workflow     | Назначение                                                                                                           | Событие запуска                                 |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `tests.yml`  | Автоматически запускает тесты Django с помощью `pytest`, чтобы убедиться, что изменения не сломали функциональность. | При каждом push и pull request в ветку `master` |
+| `build.yml`  | Проверяет структуру проекта, применяет миграции, собирает статику и выполняет базовую сборку проекта.                | При каждом push и pull request в ветку `master` |
+| `deploy.yml` | Выполняет автоматический деплой на [Render](https://render.com) по HTTP-запросу через Deploy Hook.                   | При push в ветку `master`                       |
+
+
